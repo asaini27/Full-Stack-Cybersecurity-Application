@@ -1,0 +1,19 @@
+# Node / Next
+node_modules/
+**/node_modules/
+.next/
+out/
+dist/
+npm-debug.log*
+
+# Python
+.venv/
+venv/
+**/__pycache__/
+*.pyc
+
+# Local files
+uploads/
+.env
+.env.*
+.DS_Store
