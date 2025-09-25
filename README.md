@@ -1,6 +1,8 @@
 # 🔍 Cybersecurity Log Analyzer
 
-A modern, AI-powered web application for analyzing web server logs and detecting security threats. Built with Next.js, Flask, and sophisticated anomaly detection algorithms.
+A modern, AI-powered web application for analyzing web server logs and detecting security threats. Built with Next.js, Flask, and sophisticated anomaly detection algorithms. 
+
+## [Demo](https://drive.google.com/file/d/18dO7E25LdOaOg6LMZ9NmFglgnXqTSzFt/view?usp=sharing)
 
 ## 🚀 Features
 
