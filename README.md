@@ -153,45 +153,33 @@ The application uses **rule-based AI algorithms** for sophisticated threat detec
 192.168.1.100 - - [24/Sep/2024 10:00:10 +0000] "GET /admin/config.php HTTP/1.1" 404 256
 ```
 
-### 2. DDoS Attack Simulation (ddos_sample.log)
+### 2. Burst logs (bursty.log)
 ```
-# Simulates a DDoS attack with high-frequency requests from single IP
-192.168.1.200 - - [24/Sep/2024 10:00:01 +0000] "GET / HTTP/1.1" 200 1024
-192.168.1.200 - - [24/Sep/2024 10:00:01 +0000] "GET / HTTP/1.1" 200 1024
-192.168.1.200 - - [24/Sep/2024 10:00:01 +0000] "GET / HTTP/1.1" 200 1024
-192.168.1.200 - - [24/Sep/2024 10:00:02 +0000] "GET / HTTP/1.1" 200 1024
-192.168.1.200 - - [24/Sep/2024 10:00:02 +0000] "GET / HTTP/1.1" 200 1024
-# ... (repeat 150+ times within 60 seconds)
-```
-
-### 3. Error Spike Simulation (error_spike.log)
-```
-# Simulates server errors that might indicate an attack
-192.168.1.150 - - [24/Sep/2024 10:00:01 +0000] "GET / HTTP/1.1" 500 0
-192.168.1.150 - - [24/Sep/2024 10:00:02 +0000] "GET / HTTP/1.1" 500 0
-192.168.1.150 - - [24/Sep/2024 10:00:03 +0000] "GET / HTTP/1.1" 500 0
-192.168.1.151 - - [24/Sep/2024 10:00:04 +0000] "GET / HTTP/1.1" 500 0
-192.168.1.152 - - [24/Sep/2024 10:00:05 +0000] "GET / HTTP/1.1" 500 0
-192.168.1.153 - - [24/Sep/2024 10:00:06 +0000] "GET / HTTP/1.1" 500 0
-192.168.1.154 - - [24/Sep/2024 10:00:07 +0000] "GET / HTTP/1.1" 500 0
-192.168.1.155 - - [24/Sep/2024 10:00:08 +0000] "GET / HTTP/1.1" 500 0
-192.168.1.156 - - [24/Sep/2024 10:00:09 +0000] "GET / HTTP/1.1" 500 0
-192.168.1.157 - - [24/Sep/2024 10:00:10 +0000] "GET / HTTP/1.1" 500 0
-```
-
-### 4. Clean Log File (clean_sample.log)
-```
-# Normal web traffic with no threats
-192.168.1.10 - - [24/Sep/2024 10:00:01 +0000] "GET /index.html HTTP/1.1" 200 1024
-192.168.1.11 - - [24/Sep/2024 10:00:02 +0000] "GET /about.html HTTP/1.1" 200 2048
-192.168.1.12 - - [24/Sep/2024 10:00:03 +0000] "GET /contact.html HTTP/1.1" 200 1536
-192.168.1.13 - - [24/Sep/2024 10:00:04 +0000] "POST /api/login HTTP/1.1" 200 512
-192.168.1.14 - - [24/Sep/2024 10:00:05 +0000] "GET /products.html HTTP/1.1" 200 3072
-192.168.1.15 - - [24/Sep/2024 10:00:06 +0000] "GET /services.html HTTP/1.1" 200 2048
-192.168.1.16 - - [24/Sep/2024 10:00:07 +0000] "GET /blog.html HTTP/1.1" 200 4096
-192.168.1.17 - - [24/Sep/2024 10:00:08 +0000] "GET /support.html HTTP/1.1" 200 1536
-192.168.1.18 - - [24/Sep/2024 10:00:09 +0000] "GET /faq.html HTTP/1.1" 200 1024
-192.168.1.19 - - [24/Sep/2024 10:00:10 +0000] "GET /privacy.html HTTP/1.1" 200 2048
+203.0.113.9 - - [10/Oct/2000:13:55:00 -0700] "GET /home HTTP/1.1" 200 256 "-" "Mozilla/5.0"
+203.0.113.9 - - [10/Oct/2000:13:55:02 -0700] "GET /home HTTP/1.1" 200 256 "-" "Mozilla/5.0"
+203.0.113.9 - - [10/Oct/2000:13:55:04 -0700] "GET /home HTTP/1.1" 200 256 "-" "Mozilla/5.0"
+203.0.113.9 - - [10/Oct/2000:13:55:06 -0700] "GET /home HTTP/1.1" 200 256 "-" "Mozilla/5.0"
+203.0.113.9 - - [10/Oct/2000:13:55:08 -0700] "GET /home HTTP/1.1" 200 256 "-" "Mozilla/5.0"
+198.51.100.42 - - [10/Oct/2000:13:55:10 -0700] "GET /login HTTP/1.1" 200 128 "-" "Mozilla/5.0"
+198.51.100.42 - - [10/Oct/2000:13:55:10 -0700] "GET /login HTTP/1.1" 200 128 "-" "Mozilla/5.0"
+198.51.100.42 - - [10/Oct/2000:13:55:11 -0700] "GET /login HTTP/1.1" 200 128 "-" "Mozilla/5.0"
+198.51.100.42 - - [10/Oct/2000:13:55:11 -0700] "GET /login HTTP/1.1" 200 128 "-" "Mozilla/5.0"
+198.51.100.42 - - [10/Oct/2000:13:55:12 -0700] "GET /login HTTP/1.1" 200 128 "-" "Mozilla/5.0"
+198.51.100.42 - - [10/Oct/2000:13:55:12 -0700] "GET /login HTTP/1.1" 200 128 "-" "Mozilla/5.0"
+198.51.100.42 - - [10/Oct/2000:13:55:13 -0700] "GET /login HTTP/1.1" 200 128 "-" "Mozilla/5.0"
+198.51.100.42 - - [10/Oct/2000:13:55:13 -0700] "GET /login HTTP/1.1" 200 128 "-" "Mozilla/5.0"
+198.51.100.42 - - [10/Oct/2000:13:55:14 -0700] "GET /login HTTP/1.1" 200 128 "-" "Mozilla/5.0"
+198.51.100.42 - - [10/Oct/2000:13:55:14 -0700] "GET /login HTTP/1.1" 200 128 "-" "Mozilla/5.0"
+192.0.2.55 - - [10/Oct/2000:14:00:00 -0700] "GET /admin HTTP/1.1" 500 0 "-" "Mozilla/5.0"
+192.0.2.55 - - [10/Oct/2000:14:00:01 -0700] "GET /admin HTTP/1.1" 500 0 "-" "Mozilla/5.0"
+192.0.2.55 - - [10/Oct/2000:14:00:02 -0700] "GET /admin HTTP/1.1" 500 0 "-" "Mozilla/5.0"
+192.0.2.55 - - [10/Oct/2000:14:00:03 -0700] "GET /admin HTTP/1.1" 500 0 "-" "Mozilla/5.0"
+192.0.2.55 - - [10/Oct/2000:14:00:04 -0700] "GET /admin HTTP/1.1" 500 0 "-" "Mozilla/5.0"
+192.0.2.55 - - [10/Oct/2000:14:00:05 -0700] "GET /admin HTTP/1.1" 500 0 "-" "Mozilla/5.0"
+192.0.2.55 - - [10/Oct/2000:14:00:06 -0700] "GET /admin HTTP/1.1" 500 0 "-" "Mozilla/5.0"
+192.0.2.55 - - [10/Oct/2000:14:00:07 -0700] "GET /admin HTTP/1.1" 500 0 "-" "Mozilla/5.0"
+192.0.2.55 - - [10/Oct/2000:14:00:08 -0700] "GET /admin HTTP/1.1" 500 0 "-" "Mozilla/5.0"
+192.0.2.55 - - [10/Oct/2000:14:00:09 -0700] "GET /admin HTTP/1.1" 500 0 "-" "Mozilla/5.0"
 ```
 
 ## 🧪 Testing the Application
